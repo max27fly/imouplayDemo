@@ -2,8 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/public/public",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/video/video"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -17,7 +17,7 @@
     "selectedColor": "#06ae56",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/video/video",
         "text": "视频列表",
         "iconPath": "/assets/images/tabbar/camera.png",
         "selectedIconPath": "/assets/images/tabbar/camera_active.png"
