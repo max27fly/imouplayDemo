@@ -1,14 +1,33 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/public/public",
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#06ae56",
+    "navigationBarTitleText": "乐橙轻应用助手",
+    "navigationBarTextStyle": "white"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#06ae56",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "视频列表",
+        "iconPath": "/assets/images/tabbar/camera.png",
+        "selectedIconPath": "/assets/images/tabbar/camera_active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "/assets/images/tabbar/user.png",
+        "selectedIconPath": "/assets/images/tabbar/user_active.png"
+      }
+    ]
+  }
 }
