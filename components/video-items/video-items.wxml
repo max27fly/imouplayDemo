@@ -1,0 +1,18 @@
+ <view class="weui-panel weui-panel_access">
+ 	<view class="weui-panel__bd">
+ 		<block wx:for="{{videolist}}" wx:key="index" wx:for-item="videoitem">
+ 			<navigator url="/pages/openvideoplay/openvideoplay?deviceinfo={{videoitem.deviceId+'_'+videoitem.channelId}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+ 				<view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width:90px;height:90px;line-height:90px;">
+ 					<image class="weui-media-box__thumb" src="/assets/images/common/ipc.jpeg" />
+ 				</view>
+ 				<view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+ 					<view class="weui-media-box__title">视频名称：{{videoitem.channelName}}</view>
+ 					<view class="weui-media-box__desc">序列号:{{videoitem.deviceId}}</view>
+ 					<view class="weui-media-box__desc">通道号:{{videoitem.channelId}}</view>
+ 					<view class="weui-media-box__desc">{{videoitem.channelOnline?'通道在线':'通道不在线'}}</view>
+ 				</view>
+ 			</navigator>
+ 		</block>
+ 	</view>
+
+ </view>

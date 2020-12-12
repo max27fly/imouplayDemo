@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "imou-player": "plugin://myPlugin/imou-player"
+  }
+  
+}

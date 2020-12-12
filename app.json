@@ -1,24 +1,34 @@
 {
+
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
+    "pages/wxbind/wxbind",
+    "pages/video/video",
     "pages/profile/profile",
-    "pages/video/video"
+    "pages/openbind/openbind",
+    "pages/openvideoplay/openvideoplay"
   ],
+
+  "plugins": {
+    "myPlugin": {
+      "version": "0.0.5",
+      "provider": "wx26dd070c090dfbdf"
+    }
+  },
+
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#06ae56",
-    "navigationBarTitleText": "乐橙轻应用助手",
+    "navigationBarBackgroundColor": "#f18d00",
+    "navigationBarTitleText": "乐橙开放平台轻应用开发助手",
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "selectedColor": "#06ae56",
+    "selectedColor": "#f18d00",
     "list": [
       {
         "pagePath": "pages/video/video",
-        "text": "视频列表",
+        "text": "我的视频",
         "iconPath": "/assets/images/tabbar/camera.png",
         "selectedIconPath": "/assets/images/tabbar/camera_active.png"
       },

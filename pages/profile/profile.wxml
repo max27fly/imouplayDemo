@@ -1,2 +1,32 @@
 <!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<view class="page__bd" style="padding-bottom:0px;">
+
+	<view class="userinfo">
+
+	</view>
+	<view class='header'>
+		<view class='avatar'>
+			<image bindtap="bindViewTap" class="userinfo-avatar" wx:if="{{hasUserInfo}}" src="{{wxUserInfo.avatarUrl}}" mode="cover"></image>
+			<block wx:else>
+			</block>
+
+		</view>
+		<view class='login-info'>
+			<view class='login'> <text class="userinfo-nickname"  wx:if="{{hasUserInfo}}">你好，{{wxUserInfo.nickName}}!</text>
+				<block wx:else>
+					<text class="userinfo-nickname"  >请点击</text>
+					<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">微信登录</button>
+				</block>
+			</view>
+		</view>
+	</view>
+
+
+	<view class="weui-form__tips-area">
+	</view>
+	<view class="weui-form__opr-area">
+		<button bindtap='openDialog'>退出</button>
+	</view>
+
+
+</view>

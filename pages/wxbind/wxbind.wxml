@@ -1,0 +1,22 @@
+<view class="page">
+	<view class="page__bd">
+		<view class="weui-msg">
+			<view class="weui-msg__text-area">
+				<view class="weui-msg__title" style="text-align:left;font-size:50rpx;color:#f18d00;font-weight:500">您好！</view>
+				<view class="weui-msg__desc" style="text-align:left;font-size: 45rpx;;font-weight:300">轻应用开发助手仅为开发者提供一个标准、简单的接入样例,以方便开发者快速了解乐橙轻应用在小程序中的使用，并且快速定位一些问题</view>
+			</view>
+			<view class="weui-msg__opr-area">
+			</view>
+		</view>
+	</view>
+	<view class="page__ft">
+		<view class="add_login_btn">
+		
+			<button wx:if="{{!statusScopeUser&&canIUse}}"  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" class="login_btn" type="primary" bindtap="onReturnVideoPage" style="background-color: #f18d00;">
+				<image class='btnImg' src='/assets/images/common/wechat.png'></image>
+				<view style="font-size:17px;">微信登录</view>
+			</button>
+
+		</view>
+	</view>
+</view>

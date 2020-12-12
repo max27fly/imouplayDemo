@@ -1,41 +1,37 @@
 //app.js
-App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res);
-      }
-    })
-    // 获取用户信息
+App({
+  globalData: {
+    token: '', //session token
+    statusOpenBind: false, //开发者账号是否已经登录
+    wxUserInfo: null, //微信授权后的scope信息
+    statusScopeUser: null, //是否已经微信授权
+    appId: null, //乐橙开放平台开发者appid
+    appSecret: null, //乐橙开放平台开发者appsecret
+    videoListRefresh:true//默认每次点击”我的视频“都刷新设备列表页面，除了从视频播放页面返回不刷新
+  },
+
+  onLaunch: function () {
+    //进入授权判断页面
+    this.checkWxUserInfo()
+  },
+
+
+  checkWxUserInfo() {
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
-          console.log("已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框")
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
+          this.globalData.statusScopeUser = true
+          console.log("微信用户已经授权")
+        } else {
+          this.globalData.statusScopeUser = false
+          console.log("微信用户未经授权")
+        }
+        if (this.wxUserScopeReadyCallback) {
+          this.wxUserScopeReadyCallback(res)
         }
       }
     })
-  },
-  globalData: {
-    userInfo: null
   }
+
 })

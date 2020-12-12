@@ -1,0 +1,4 @@
+<view wx:if="{{kittoken}}" class="page">
+	<imou-player src="{{playurl}}" kitToken="{{kittoken}}" autoplay="true" controls="true" type="1">
+	</imou-player>
+</view>
