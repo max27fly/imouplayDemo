@@ -3,5 +3,5 @@
 
 小程序体验：
 
-![image](https://max-1300065943.cos.ap-nanjing.myqcloud.com/QR_code.jpg)
+![](https://max-1300065943.cos.ap-nanjing.myqcloud.com/QR_code.jpg)
 
